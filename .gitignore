@@ -6,3 +6,6 @@ main.*
 
 # test files
 test.*
+
+# print file
+binary_tree_print.c
