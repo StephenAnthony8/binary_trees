@@ -3,6 +3,7 @@
 
 # main.c files
 main.*
+*-main.c
 
 # test files
 test.*
