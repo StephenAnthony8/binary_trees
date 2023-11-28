@@ -2,7 +2,10 @@
 #include <stdlib.h>
 
 /**
- *
+ * binary_tree_node - creates a binary tree node
+ * @parent: parent node to be attached to
+ * @value: value to include inside created node
+ * Return: created node or NULL
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
