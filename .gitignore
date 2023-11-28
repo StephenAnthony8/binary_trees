@@ -1,0 +1,8 @@
+# vi files
+.*.swp
+
+# main.c files
+main.*
+
+# test files
+test.*
