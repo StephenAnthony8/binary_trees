@@ -6,6 +6,19 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	int rtn_val = 0;
+
+	rtn_val = recursive_check(tree);
+
+	return ((rtn_val == 2 ? 1 : rtn_val));
+}
+/**
+ * recursive_check - checks for perfect instances
+ * @tree: node to be checked
+ * Return: 0 for fail, 1 for pass, 2 for empty node
+ */
+int recursive_check(const binary_tree_t *tree)
+{
 	int count, count_l, count_r;
 
 	count = count_l = count_r = 0;
@@ -15,8 +28,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		if (tree->left && tree->right)
 		{
 			count = 1;
-			count_l = binary_tree_is_perfect(tree->left);
-			count_r = binary_tree_is_perfect(tree->right);
+			count_l = recursive_check(tree->left);
+			count_r = recursive_check(tree->right);
 			count = ((count_l & count_r) != 0 ? 1 : 0);
 		}
 		else if (!tree->left && !tree->right)
