@@ -6,18 +6,15 @@
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int count_l, count_r;
+	int count, count_l, count_r;
 
-	count_l = count_r = 0;
-
-	if (tree)
+	count = count_l = count_r = 0;
+	if (tree && (tree->left || tree->right))
 	{
 		count_l = binary_tree_balance(tree->left);
 		count_r = binary_tree_balance(tree->right);
-		if (tree->left)
-			count_l++;
-		if (tree->right)
-			count_r++;
+		count += (count_l - count_r ) + 1;
 	}
-	return (count_l - count_r);
+
+	return (count);
 }
